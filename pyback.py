@@ -41,7 +41,6 @@ def get_github_repo_url() -> [tuple[str, str]]:
     r = requests.get(url, headers=headers)
 
     if r.status_code != 200:
-        print(r.headers)
         print('error: cannot retrieve repos')
         sys.exit(1)
     
