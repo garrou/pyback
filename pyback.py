@@ -81,7 +81,8 @@ def clone_missing_project(dirpath: str, repos: [tuple[str, str]]) -> [str]:
         if not os.path.exists(os.path.join(dirpath, name)):
             # https://<github_pat>@github.com/<user>/<repo>
             url = url[:8] + token + '@' + url[8:]
-            os.system(f'git -C {dirpath} clone {url}')     
+            os.system(f'git -C {dirpath} clone {url}')
+            print()     
         else:
             existing_projects.append(name)
 
